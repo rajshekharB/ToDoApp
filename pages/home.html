@@ -1,0 +1,48 @@
+    <style>
+        .myContainer {
+            width:50%;
+            padding:20px;
+            background-color:aliceblue;            
+            margin:0 auto;
+            border-radius: 10px;
+        }
+        .loginStatus,h3{
+            color:brown;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+
+<div class="container" ng-controller="loginController">
+    <div class="row">
+        <div class="myContainer">
+            <h3 class="text-center">Login Form</h3><br>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label>User Name</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" ng-model="username" class="form-control">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label>Password</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" ng-model="password" class="form-control">
+                </div>
+            </div></br>
+            <div class="row">
+                <div class="col-md-offset-5 col-md-3">
+                <button class="btn btn-success btn-md" ng-click="checkLogin()">Login</button>
+                </div>
+            </div><br>
+            <p ng-show="loginStatus" class="loginStatus text-center">
+                Enter valid username and password !
+            </p>                                
+        </div>
+    </div>
+</div>

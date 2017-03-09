@@ -1,0 +1,35 @@
+<style>
+    .grid {
+        width: 600px;
+        height: 300px;
+        margin:0 auto;
+    }
+</style>
+<div class="container" ng-app="myApp" ng-controller="commentController">
+             <div class="jumbotron">
+                 <h2 class="text-center">Angular Todo List</h2> 
+            </div>
+            <div class="row">
+                <div class="myContainer">
+                                <div class="col-md-3">
+                                    <label> Enter Comment </label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" ng-model="userText" placeholder="Enter the comments." autofocus>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary" ng-click="addComment()" ng-show="!update">ADD</button>
+                                    <button class="btn btn-danger" ng-click="updateComment()" ng-show="update">UPDATE</button>                                    
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="" ng-click="logout()">Logout</a>
+                                </div>
+                </div>
+            </div><br><br>
+            <div class="table-responsive">
+                  <div ui-grid="gridOptions" class="grid"  ui-grid-pagination=""></div>
+                <div class="text-center" ng-show="gridOptions.totalItems > numRows">
+        <pagination class="pagination-sm" total-items="gridOptions.totalItems" items-per-page="gridOptions.paginationPageSize" ng-model="gridOptions.paginationCurrentPage"></pagination>
+      </div>
+            </div>
+        </div>
